@@ -2,7 +2,7 @@
 //!
 //! Drives the real `Vic` engine across known PAL raster lines, records its
 //! per-cycle BA state and memory accesses through a recording `VicMemory`, and
-//! compares them against the canonical schedule in `mos_vic_ii::oracle`.
+//! compares them against the canonical schedule in `emu198x_mos_vic_ii::oracle`.
 //!
 //! - **Live tests** lock the timing facts the engine already gets right (the
 //!   Seam 1 BA audit, re-proved here through the oracle).
@@ -15,8 +15,8 @@
 
 use std::cell::RefCell;
 
-use mos_vic_ii::oracle::{self, canonical_for_engine_cycle, expected_ba_low};
-use mos_vic_ii::{Vic, VicMemory, VicModel, VicPhi2Bus};
+use emu198x_mos_vic_ii::oracle::{self, canonical_for_engine_cycle, expected_ba_low};
+use emu198x_mos_vic_ii::{Vic, VicMemory, VicModel, VicPhi2Bus};
 
 const CYCLES_PER_LINE: u32 = 63;
 const LINES_PER_FRAME: u32 = 312;
